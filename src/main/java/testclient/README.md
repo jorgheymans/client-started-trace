@@ -1,0 +1,2 @@
+- Executing `StartClientServerTogether` generates a root span with name 'client-execution' containing both server calls.   
+- Executing `StartServers`, and then `StartClient` (i.e. both are in a different VM instance) the root span 'client-execution' is no longer created
