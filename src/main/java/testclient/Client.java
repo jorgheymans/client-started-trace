@@ -49,5 +49,12 @@ public class Client {
     } finally {
       clientSpan.finish();
     }
+    tracing.close();
+    TracingFactory.reporter.flush();
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {
+    }
+    TracingFactory.reporter.close();
   }
 }
